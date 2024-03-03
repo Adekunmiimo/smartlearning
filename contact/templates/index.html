@@ -1,0 +1,360 @@
+{% extends 'navbar.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("{% static 'img/bg-texture.png' %}");
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header__container">
+            <div class="header__left">
+                <h1>Grow your skills to advance your career path</h1>
+                <p>Explore endless learning possibilities at smartlearning. Elevate your skills with expert-led courses, anytime, anywhere. Your journey to knowledge begins here. Start now
+                </p>
+                {% if user.is_authenticated %}
+                <a href="{% url 'userpage' %}" class="btn btn-primary">Get Started</a>
+                {% else %}
+                <a href="{% url 'signup' %}" class="btn btn-primary">Get Started</a>
+                {% endif %}
+            </div>
+
+            <div class="header__right">
+                <div class="header__right-image">
+                    <img src="{% static '/img/header.svg'%}">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--======END OF HEADER =======-->
+
+    <section class="categories">
+      <div class="container categories__container">
+        <div class="categories__left">
+            <h1>categories</h1>
+            <p>
+                Discover tailored courses that empower you with practical skills and knowledge. From business to tech, each category unlocks new opportunities. Gain expertise, boost your career, and transform your future with our value-driven courses.
+
+            </p>
+            <a href='{% url 'about' %}' class="btn">Learn More</a>
+        </div>
+
+        <div class="categories__right">
+            <article class="category">
+               <span class="category__icon"><i class = "uil uil-bitcoin-circle"></i></span>
+               <h5>Blockchain</h5> 
+               <p>Unlock blockchain mastery. Transform your future with our cutting-edge course.</p>
+            </article>
+
+            <article class="category">
+                <span class="category__icon"><i class = "uil uil-palette"></i></span>
+                <h5>Graphic Design</h5> 
+                <p>Unleash creativity with our dynamic Graphics Design course. Join now!</p>
+             </article>
+
+             <article class="category">
+                <span class="category__icon"><i class = "uil uil-usd-circle"></i></span>
+                <h5>Finance</h5> 
+                <p>Master finance essentials for success. Enroll now</p>
+             </article>
+
+             <article class="category">
+                <span class="category__icon"><i class = "uil uil-megaphone"></i></span>
+                <h5>Marketing</h5> 
+                <p>Master marketing strategies for success. Enroll now!</p>
+             </article>
+
+             <article class="category">
+                <span class="category__icon"><i class = "uil uil-music"></i></span>
+                <h5>Music</h5> 
+                <p>Harmonize your talent with our transformative Music Mastery course!</p>
+             </article>
+
+             <article class="category">
+                <span class="category__icon"><i class = "uil uil-puzzle-piece"></i></span>
+                <h5>Business</h5> 
+                <p>Elevate your business acumen. Transform. Succeed. Enroll now!</p>
+             </article>
+        </div>
+      </div>  
+    </section>
+
+    <!--===== END OF CATEGORIES =====-->
+    <section class="courses">
+        <h2>Our Popular Courses</h2>
+        <div class="container courses__container">
+            <article class="course">
+                <div class="course__image">
+                    <img src="{% static '/img/course1.jpg'%}" alt="Responsive Social Media Website UI Design">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive Social Media Website UI Design</h4>
+                    <p>
+                        Craft dynamic social interfaces. Learn Responsive UI Design. Innovate now!.
+                    </p>
+                    <a href="{% url 'courses' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </article>
+    
+            <article class="course">
+                <div class="course__image">
+                    <img src="{% static '/img/course2.jpg'%}" alt="Responsive SmartHome Website Design">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive SmartHome Website Design</h4>
+                    <p>
+                        Craft intelligent homes with our Responsive SmartHome Design course. Enroll today!
+                    </p>
+                    <a href="{% url 'courses' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </article>
+    
+            <article class="course">
+                <div class="course__image">
+                    <img src="{% static '/img/course3.jpg'%}" alt="Responsive Admin Dashboard UI Design">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive Admin Dashboard UI Design</h4>
+                    <p>
+                        Craft seamless admin dashboards. Empower UX. Enroll for innovation today!
+                    </p>
+                    <a href="{% url 'courses' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+     <!--===== END OF COURSES =====-->
+    
+
+     <section class="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div class="container faqs__container">
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>How do I enroll in a course?</h4>
+                    <p>
+                        Click on the course, select "Enroll," and follow the simple registration process.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>Can I access courses on multiple devices?</h4>
+                    <p>
+                        Yes, our platform is responsive; enjoy learning on any device.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4> Are the courses self-paced?</h4>
+                    <p>
+                        Absolutely! Learn at your own pace, anytime, and from anywhere.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4> What payment options are available?</h4>
+                    <p>
+                        We accept various payment methods, including credit cards and PayPal.
+
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>Is there a refund policy for courses?</h4>
+                    <p>
+                        Yes, check our refund policy for details on cancellations and refunds.   
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>How can I interact with instructors?</h4>
+                    <p>
+                        Engage through discussion forums, live sessions, and direct messaging.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>Certificates on course completion?</h4>
+                    <p>
+                        Yes, earn a verified certificate to showcase your new skills.
+                        
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>Can I switch courses after enrollment?</h4>
+                    <p>
+                        You can contact support to explore options for course changes.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>Are there prerequisites for certain courses?</h4>
+                    <p>
+                         Course requirements vary; check each course's details for specifics.
+                    
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4>How do I track my progress in a course?</h4>
+                    <p>
+                        Your dashboard displays progress, completed modules, and upcoming lessons.
+
+                    </p>
+                </div>
+            </article>
+        </div>
+     </section>
+     <!--===== END OF FAQs =====-->
+
+     <section class="container testimonials__container mySwiper">
+        <h2>Students' Testimonials</h2>
+        <div class="swiper-wrapper">
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="{% static '/img/avatar1.jpg'%}">
+                    <!-- "{% static '/img/course2.jpg'%}" -->
+                </div>
+                    <div class="testimonial__info">
+                        <h5>Diana Ayi</h5>
+                        <small>Student</small>
+                    </div>
+                    <div class="testimonial__body">
+                        <p>
+                            "This platform transformed my learning experience! Engaging courses, expert instructors, and a user-friendly interface. Achieving my goals feels within reach!"
+                        </p>
+                    </div>
+            </article>
+
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="{% static '/img/avatar2.jpg'%}">
+                    <!-- "{% static '/img/course2.jpg'%}" -->
+                </div>
+                <div class="testimonial__info">
+                    <h5>Ernest Achiever</h5>
+                    <small>Web Developer</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                       
+
+                        "As a busy professional, the flexibility here is a game-changer. I can pursue my passions without compromising my schedule. Highly recommend!"
+                    </p>
+                </div>
+            </article>
+
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="{% static '/img/avatar3.jpg'%}">
+                    <!-- "{% static '/img/course2.jpg'%}" -->
+                </div>
+                    <div class="testimonial__info">
+                        <h5>Edem Quist</h5>
+                        <small>Student</small>
+                    </div>
+                    <div class="testimonial__body">
+                        <p>
+                            "I'm impressed with the quality of content. The courses are both challenging and rewarding. The interactive format keeps me motivated to learn every day!"
+                        </p>
+                    </div>
+            </article>
+
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="{% static '/img/avatar4.jpg'%}">
+                    <!-- "{% static '/img/course2.jpg'%}" -->
+                </div>
+                <div class="testimonial__info">
+                    <h5>Hajia Bintu</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        "The variety of courses is amazing! From tech to business, there's something for everyone. Plus, the supportive community and responsive instructors make it a standout."
+
+                    </p>
+                </div>
+            </article>
+
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="{% static '/img/avatar5.jpg'%}">
+                    <!-- "{% static '/img/course2.jpg'%}" -->
+                </div>
+                <div class="testimonial__info">
+                    <h5>Jane Doe</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        "Getting certified here opened doors for me professionally. The skills I gained were immediately applicable in my job. Truly a valuable investment in my career!"
+                        
+                    </p>
+                </div>
+            </article>   
+        </div>
+                   <div class="swiper-pagination"></div>
+     </section>
+
+          <!--===== END OF TESTIMONIAL=====-->
+     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+        // when window width is >= 600px
+        breakpoints: {
+            600: {
+                slidesPerView: 2
+            }
+        }
+    });
+    </script>
+</body>
+</html>
+{% endblock %}

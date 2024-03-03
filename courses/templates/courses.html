@@ -1,0 +1,57 @@
+{% extends 'navbar.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Multipage Education Website Using HTML, CSS & JavaScript</title>
+
+    <!-- ICONSCOUT CDN-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- GOOGLE FONTS (MONTSERRAT) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static '/css/course_details.css'%}">
+    <style>
+        .courses {
+            margin-top: 1rem;
+        }
+    </style>
+     <style>
+        body {
+            background-image: url("{% static '/img/bg-texture.png'%}");
+        }
+    </style>
+</head>
+<body>
+    <section class="courses">
+        <!-- <h1 class="curs">COURSES</h1> -->
+        <div class="container courses__container">
+        {% for course in courses %}
+            <article class="course">
+                <div class="course__image">
+                    <img <img src="{{ course.image.url }}" alt="{{ course.title }}">
+
+                </div>
+                <div class="course__info">
+                    <h4>{{course.title}}</h4>
+                    <p>{{course.description}}</p>
+                    <a href="{% url 'course_detail' course.pk %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </article>
+        {% empty%}
+            <p>No courses found.</p>
+        {% endfor %}
+
+        </div>
+    </section>
+    <script src="{% static 'js/main.js'%}"></script>
+
+</body>
+</html>
+{% endblock %}

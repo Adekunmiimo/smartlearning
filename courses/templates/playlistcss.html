@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% block page_title%} CSS Course Video {%endblock page_title%}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/playlist.css' %}">
+
+<main class="container">
+    <section class="main-video">
+        {% for video in page_obj_css %}
+        <div>
+            <h2 class="title">{{ video.title }}</h2>
+            <!-- Optionally include a thumbnail or small preview -->
+            <video width="600" height="440" controls>
+                <source src="{{ video.file.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {% endfor %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <button onclick="location.href='?page={{ page_obj.previous_page_number }}'">previous</button>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <button onclick="location.href='?page={{ page_obj.next_page_number }}'">next</button>
+                {% endif %}
+            </span>
+        </div>
+        
+    </section>
+    <section class="video-playlist">
+        <h3 class="title">CSS Playlist</h3>
+        <div class="videos">
+            {% for video in playlistcss %}
+                <div class="video-item">
+                    <a href="{{ video.file.url }}"><strong>{{ video.title }}</strong>    {{ video.duration }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+</main>
+{% endblock %}
+
+<script src="{% static 'js/side.js' %}"></script> 

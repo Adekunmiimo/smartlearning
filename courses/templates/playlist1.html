@@ -1,0 +1,29 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartlearning-playlist</title>
+    <link rel="stylesheet" href="{% static '/css/playlist.css'%}">
+</head>
+
+<body>
+    <main class="container">
+        <section class="main-video">
+            <video src="{% static '/videos/dp.mp4'%}" controls autoplay muted></video>
+            <h3 class="title">Title of the playing Video</h3>
+        </section>
+
+        <section class="video-playlist">
+            <h3 class="title">Title of Video Playlist</h3>
+            <p>10 lessons &nbsp; . &nbsp; 50m 48s</p>
+            <div class="videos">
+            </div>
+        </section>
+    </main>
+    <script src="{% static '/js/script.js'%}"></script>
+</body>
+</html>
+{% endblock %}

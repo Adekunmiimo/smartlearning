@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block page_title %} HTML Course Video {% endblock page_title %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/playlist.css' %}">
+<main class="container">
+    <section class="main-video">
+        <div>
+            <h2 class="title">{{ course.title }}</h2>
+            <!-- Optionally include a thumbnail or small preview -->
+            <video width="600" height="440" controls>
+                {% if course.videos.all %}
+                    {% for video in course.videos.all %}
+                        <source src="{{ video.video_file.url }}" type="video/mp4">
+                    {% endfor %}
+                {% else %}
+                    Your browser does not support the video tag.
+                {% endif %}
+            </video>
+        </div>
+
+        <div class="playlist">
+            <h2>Playlist</h2>
+            <ul>
+                <!-- Loop through videos from Django admin -->
+                {% for video in course.videos.all %}
+                <li>
+                    <a href="{{ video.video_url }}">{{ video.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</main>
+{% endblock %}
+<script src="{% static 'js/side.js' %}"></script>

@@ -1,0 +1,10 @@
+/* styles.css */
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.progress-bar-completed {
+    height: 20px;
+    background-color: #4CAF50;
+}

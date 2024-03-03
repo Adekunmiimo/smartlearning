@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+
+<h1>SIGN UP</h1>
+<br/>
+<br/>
+<form method="POST">
+    {% csrf_token %}
+    
+    <label for="{{ form.username.id_for_label }}">Username:</label>
+    {{ form.username }}
+    <br/>
+    
+    <label for="{{ form.password1.id_for_label }}">Password:</label>
+    {{ form.password1 }}
+    <br/>
+    
+    <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+    {{ form.password2 }}
+    <br/>
+    
+    <button class="btn btn-success">Signup</button>
+</form>
+<script src="{% static 'js/main.js'%}"></script>
+{% endblock %}

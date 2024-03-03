@@ -1,0 +1,15 @@
+<!-- course_detail.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ course.title }}</h2>
+<p>{{ course.description }}</p>
+<div>Progress: {{ course_progress.progress_percentage }}%</div>
+<ul>
+  {% for lesson in course.lesson_set.all %}
+  <li>{{ lesson.title }} {% if lesson in course_progress.lessons_completed.all %}Completed{% endif %}</li>
+  {% endfor %}
+</ul>
+{% if course_progress.progress_percentage == 100 %}
+<a href="{% url 'generate_certificate' course.id %}">Get Certificate</a>
+{% endif %}
+{% endblock %}

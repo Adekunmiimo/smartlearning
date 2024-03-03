@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Pooins", sans-serif;
+}
+
+:root {
+    --color-primary: #6c63ff;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+/* Adjust the width and margins to fit your layout */
+.sidebar {
+    /* width: 280px; */
+    margin-right: 20px;
+    background: var(--color-bg1);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1); 
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    position: relative;
+    color: var(--color-white);
+    font-size: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+
+.sidebar .fas {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sidebar .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--color-primary);
+    font-size: 22px;
+}
+
+.nav-items {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+a:hover {
+    background: var(--color-bg2);
+}
+
+.logout {
+   position: absolute;
+   bottom: 0;
+}
+
+/* Main Section */
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: calc(100% - 300px); /* Adjust to fit your layout */
+}
+
+.main-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-top i {
+    margin-right: 30px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.main-top h1 {
+    color: var(--color-white);
+}
+
+.main-skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px; /* Adjust the gap between cards */
+}
+
+.main-skills .card {
+    flex: 1 1 200px; /* Adjust to fit your layout */
+    background: var(--color-bg2);
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.main-skills .card h3 {
+    margin: 10px;
+    text-transform: capitalize;
+    color: var(--color-white);
+}
+
+.main-skills .card p {
+    font-size: 12px;
+    color: var(--color-white);
+}
+
+.main-skills .card button {
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.main-skills .card button:hover {
+    background: rgba(223, 70, 15, 0.856);
+}
+
+.main-skills .card i {
+    font-size: 22px;
+    padding: 10px;
+}
+
+/* Adjust margin for smaller screens to ensure proper spacing */
+@media (max-width: 768px) {
+    /* .main-skills .card {
+        flex: 1 1 100%; 
+    } */
+}
+
+/* Course */
+.main-course {
+    margin-top: 20px;
+    color: var(--color-white);
+    text-transform: capitalize;  
+}
+
+.course-box {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: var(--color-bg2);
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.course-box ul {
+    list-style: none;
+    display: flex;
+}
+
+.course-box ul li {
+    margin: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.course-box ul .active {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.course-box .course {
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+.courseSection{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.box {
+    flex: 1 1 200px; /* Adjust to fit your layout */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background: var(--color-bg1);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.box button {
+    background: var(--color-danger);
+    color: #fff;
+    padding: 7px 10px;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background: rgba(223, 70, 15, 0.856);
+}
+
+.box i {
+    font-size: 7rem;
+    float: right;
+    margin: -20px 20px 20px 0;
+}
+
+/* Adjust margin for smaller screens to ensure proper spacing */
+@media (max-width: 768px) {
+    .box {
+        flex: 1 1 100%; /* Set boxes to full width for smaller screens */
+    }
+}
+
+.html {
+    color: rgb(25, 94, 54);
+}
+
+.css {
+    color: rgb(104, 179, 35);
+}
+
+.js {
+    color: rgb(28, 98, 179);
+}

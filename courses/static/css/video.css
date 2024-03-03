@@ -1,0 +1,29 @@
+/* video_list.css */
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between videos */
+}
+
+.video-item {
+    width: 320px; /* Width of the video thumbnail */
+    border: 1px solid #ddd; /* Border around the video */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.video-item h2 {
+    font-size: 1rem; /* Title font size */
+    margin-bottom: 10px; /* Space between title and video */
+}
+
+.video-item video {
+    width: 100%; /* Make video fill the container */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 5px; /* Rounded corners for the video */
+}
+
+.video-item:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Shadow effect on hover */
+    cursor: pointer;
+}

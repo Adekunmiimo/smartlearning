@@ -1,0 +1,171 @@
+:root {
+    --primary : linear-gradient(to bottom right, #2e3267, #424890);
+    --secondary : gold;
+    --text : #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-image: var(--primary);
+    font-family: sans-serif;
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 1rem;
+
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+}
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+.main-video, .video-playlist {
+    width: 100%;
+    height: 30rem;
+}
+.main-video .title{
+    margin-top: 1rem;
+}
+.video-playlist .title{
+    margin-left: 1rem;
+}
+
+.video-playlist > p {
+    padding: 1rem;
+    color: var(--secondary);
+}
+
+.video-playlist .videos{
+   height: 70%;
+   overflow-y: auto;
+}
+
+.video-playlist .videos::-webkit-scrollbar{
+    width: 1rem;
+    border-radius: .4rem;
+    background-color: #0005;
+}
+
+.video-playlist .videos::-webkit-scrollbar-thumb {
+    
+    border-radius: .4rem;
+    background-color: #fff;
+}
+
+.video-playlist .videos .video {
+   position: relative; 
+   width: 100%;
+   height: 4rem;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   padding: 0 1rem;
+   margin-top: 1rem;
+   cursor: pointer;
+
+   border-radius: .5rem;
+}
+
+.video-playlist .videos .video:hover{
+    background-color: #0003;
+}
+
+.video-playlist .videos .video.active {
+    background-color: #0003;
+    color: var(--secondary);
+}
+
+
+.main-video video {
+    width: 100%;
+    border-radius: .5rem;
+}
+.video img{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    filter: invert(100%);
+}
+
+.video-playlist .videos .video.active img {
+ 
+    filter: invert(100%) sepia(100%) saturate(2000%) hue-rotate(360deg );
+}
+.video p{
+    margin-left: 2.5rem;
+}
+
+.video h3 {
+    width: 23rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font: 100 1rem sans-serif;
+    padding: 0 .5rem;
+}
+
+.step-links button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding around the text */
+    margin: 5px; /* Space between buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change mouse cursor on hover */
+}
+
+.step-links button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.current {
+    padding: 10px 20px; /* Aligns with button padding */
+    margin: 5px; /* Space around current page indicator */
+}
+.video-playlist {
+
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.video-item {
+    margin-bottom: 10px;
+}
+
+.video-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.video-item p {
+    font-size: 1rem;
+    color: white;
+}
